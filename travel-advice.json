@@ -1,0 +1,192 @@
+{
+  "value": [
+    {
+      "id": "CH-en",
+      "iso_code": "CH",
+      "country": "Switzerland",
+      "language": "en",
+      "published_at": "11.03.2026",
+      "valid_on": "13.03.2026",
+      "advice_against": "none",
+      "has_travel_advice": true,
+      "update_information": {
+        "meta": {
+          "html": "<figcaption>Valid on: 13.03.2026 | Published on: 11.03.2026 | <a href='https://example.org/alerts/switzerland'>Set up email notifications</a></figcaption>"
+        },
+        "html": "<figcaption><p>Heavy snow warnings were added for selected alpine regions. Travel remains open across most of the country.</p></figcaption>"
+      },
+      "general_assessment": {
+        "html": "<p>Switzerland is generally a safe destination with excellent infrastructure and reliable public services.</p><p>Travelers should still monitor weather and transport updates, especially in mountain areas.</p>"
+      },
+        "media": {
+        "map_embed": {
+          "url": "https://www.google.com/maps?q=Switzerland&output=embed",
+          "title": "Map of Switzerland",
+          "height": "450",
+          "width": "100%",
+          "ratio": "16/9"
+        }
+      },
+       "featured_card": {
+        "title": "Swiss Alps Winter Travel",
+        "imageHyperlink": "https://images.example.org/switzerland/alps-winter.jpg",
+        "imagePosition": "top",
+        "body": "Snow conditions in alpine regions can affect trains, roads, and cable cars. Check local forecasts before departure.",
+        "metadata": "Updated 11 March 2026",
+        "href": "https://example.org/switzerland/alps-travel",
+        "isExternal": "true"
+      },
+       "useful_links": [
+        {
+          "label": "Federal Rail Travel Updates",
+          "href": "https://example.org/switzerland/rail-updates"
+        },
+        {
+          "label": "Mountain Weather Forecast",
+          "href": "https://example.org/switzerland/mountain-weather"
+        },
+        {
+          "label": "Emergency and Safety Information",
+          "href": "https://example.org/switzerland/emergency"
+        }
+      ],
+      "chapters": [
+        {
+          "title": "Regional Risks",
+          "htmlTitle": "<h2 class='h2' id='regional-risks'>Regional Risks</h2>",
+          "anchorUrl": "#regional-risks",
+          "html": "<div class='vertical-spacing'><p>No major nationwide security risks are currently reported. In alpine regions, weather conditions can change rapidly.</p><p><strong>Check local transport and weather alerts before visiting mountain destinations.</strong></p></div>"
+        },
+        {
+          "title": "Safety and Security",
+          "htmlTitle": "<h2 class='h2' id='safety-and-security'>Safety and Security</h2>",
+          "anchorUrl": "#safety-and-security",
+          "html": "<div class='vertical-spacing'><p>Petty theft may occur in busy tourist areas, train stations, and airports.</p><p>Keep valuables secure and stay alert in crowded public places.</p></div>"
+        },
+        {
+          "title": "Transport and Infrastructure",
+          "htmlTitle": "<h2 class='h2' id='transport-and-infrastructure'>Transport and Infrastructure</h2>",
+          "anchorUrl": "#transport-and-infrastructure",
+          "html": "<div class='vertical-spacing'><p>Public transportation is extensive and dependable. Snow, ice, and avalanche measures may cause temporary delays in mountain regions.</p></div>"
+        },
+        {
+          "title": "Local Laws and Customs",
+          "htmlTitle": "<h2 class='h2' id='local-laws-and-customs'>Local Laws and Customs</h2>",
+          "anchorUrl": "#local-laws-and-customs",
+          "html": "<div class='vertical-spacing'><p>Visitors should respect public order rules, ticketing requirements on transport, and local environmental protections.</p></div>"
+        },
+        {
+          "title": "Health and Medical Care",
+          "htmlTitle": "<h2 class='h2' id='health-and-medical-care'>Health and Medical Care</h2>",
+          "anchorUrl": "#health-and-medical-care",
+          "html": "<div class='vertical-spacing'><p>Medical care is of a high standard, but treatment can be expensive without insurance.</p><p>Carry proof of travel insurance covering emergency care and mountain rescue if relevant.</p></div>"
+        },
+        {
+          "title": "Useful Contacts",
+          "htmlTitle": "<h2 class='h2' id='useful-contacts'>Useful Contacts</h2>",
+          "anchorUrl": "#useful-contacts",
+          "html": "<div class='vertical-spacing'><p>Emergency services: 112</p><p>Police: 117<br>Ambulance: 144<br>Fire brigade: 118</p></div>"
+        }
+      ],
+      "disclaimer_of_liability": {
+        "html": "<p><strong>Disclaimer</strong><br>This travel advice is general guidance only. Travelers remain responsible for their own decisions and preparation.</p>"
+      }
+    },
+    {
+      "id": "CH-de",
+      "iso_code": "CH",
+      "country": "Switzerland",
+      "language": "de",
+      "published_at": "11.03.2026",
+      "valid_on": "13.03.2026",
+      "advice_against": "none",
+      "has_travel_advice": true,
+      "update_information": {
+        "meta": {
+          "html": "<figcaption>Valid on: 13.03.2026 | Published on: 11.03.2026 | <a href='https://example.org/alerts/schweiz'>E-Mail-Benachrichtigung einrichten</a></figcaption>"
+        },
+        "html": "<figcaption><p>Hinweise zu winterbedingten Verkehrsunterbrüchen in Bergregionen wurden ergänzt.</p></figcaption>"
+      },
+      "general_assessment": {
+        "html": "<p>Die Schweiz ist grundsätzlich ein sicheres Reiseziel mit sehr guter Infrastruktur.</p><p>In Bergregionen sollten Wetter- und Verkehrsmeldungen beachtet werden.</p>"
+      },
+      "chapters": [
+        {
+          "title": "Regionale Risiken",
+          "htmlTitle": "<h2 class='h2' id='regionale-risiken'>Regionale Risiken</h2>",
+          "anchorUrl": "#regionale-risiken",
+          "html": "<div class='vertical-spacing'><p>Es bestehen derzeit keine grösseren landesweiten Sicherheitsrisiken. In den Alpen können Wetterbedingungen rasch wechseln.</p></div>"
+        },
+        {
+          "title": "Kriminalität",
+          "htmlTitle": "<h2 class='h2' id='kriminalitaet'>Kriminalität</h2>",
+          "anchorUrl": "#kriminalitaet",
+          "html": "<div class='vertical-spacing'><p>In grösseren Städten und an Bahnhöfen kann es vereinzelt zu Taschendiebstählen kommen.</p></div>"
+        },
+        {
+          "title": "Verkehr und Infrastruktur",
+          "htmlTitle": "<h2 class='h2' id='verkehr-und-infrastruktur'>Verkehr und Infrastruktur</h2>",
+          "anchorUrl": "#verkehr-und-infrastruktur",
+          "html": "<div class='vertical-spacing'><p>Das öffentliche Verkehrsnetz ist dicht und zuverlässig. Witterungsbedingungen können in Berggebieten kurzfristig zu Einschränkungen führen.</p></div>"
+        },
+        {
+          "title": "Nützliche Adressen",
+          "htmlTitle": "<h2 class='h2' id='nuetzliche-adressen'>Nützliche Adressen</h2>",
+          "anchorUrl": "#nuetzliche-adressen",
+          "html": "<div class='vertical-spacing'><p>Allgemeiner Notruf: 112</p><p>Polizei: 117<br>Ambulanz: 144<br>Feuerwehr: 118</p></div>"
+        }
+      ],
+      "disclaimer_of_liability": {
+        "html": "<p><strong>Haftungsausschluss</strong><br>Diese Reisehinweise dienen der allgemeinen Orientierung und ersetzen keine eigene Vorbereitung.</p>"
+      }
+    },
+    {
+      "id": "CH-fr",
+      "iso_code": "CH",
+      "country": "Switzerland",
+      "language": "fr",
+      "published_at": "11.03.2026",
+      "valid_on": "13.03.2026",
+      "advice_against": "none",
+      "has_travel_advice": true,
+      "update_information": {
+        "meta": {
+          "html": "<figcaption>Valid on: 13.03.2026 | Published on: 11.03.2026 | <a href='https://example.org/alerts/suisse'>Configurer les notifications par e-mail</a></figcaption>"
+        },
+        "html": "<figcaption><p>Des informations sur les perturbations hivernales dans certaines zones alpines ont été ajoutées.</p></figcaption>"
+      },
+      "general_assessment": {
+        "html": "<p>La Suisse est généralement une destination sûre avec une infrastructure de haute qualité.</p><p>Les voyageurs doivent suivre les prévisions météorologiques et les informations de transport dans les zones montagneuses.</p>"
+      },
+      "chapters": [
+        {
+          "title": "Risques régionaux",
+          "htmlTitle": "<h2 class='h2' id='risques-regionaux'>Risques régionaux</h2>",
+          "anchorUrl": "#risques-regionaux",
+          "html": "<div class='vertical-spacing'><p>Aucun risque majeur à l’échelle nationale n’est actuellement signalé. En montagne, les conditions peuvent évoluer rapidement.</p></div>"
+        },
+        {
+          "title": "Sécurité",
+          "htmlTitle": "<h2 class='h2' id='securite'>Sécurité</h2>",
+          "anchorUrl": "#securite",
+          "html": "<div class='vertical-spacing'><p>Des vols à la tire peuvent se produire dans les zones touristiques très fréquentées et les gares.</p></div>"
+        },
+        {
+          "title": "Transport et infrastructure",
+          "htmlTitle": "<h2 class='h2' id='transport-et-infrastructure'>Transport et infrastructure</h2>",
+          "anchorUrl": "#transport-et-infrastructure",
+          "html": "<div class='vertical-spacing'><p>Le réseau de transport public est dense et efficace. Des perturbations temporaires peuvent survenir en raison de la neige ou du verglas.</p></div>"
+        },
+        {
+          "title": "Contacts utiles",
+          "htmlTitle": "<h2 class='h2' id='contacts-utiles'>Contacts utiles</h2>",
+          "anchorUrl": "#contacts-utiles",
+          "html": "<div class='vertical-spacing'><p>Urgences générales: 112</p><p>Police: 117<br>Ambulance: 144<br>Pompiers: 118</p></div>"
+        }
+      ],
+      "disclaimer_of_liability": {
+        "html": "<p><strong>Avertissement</strong><br>Ces conseils aux voyageurs sont fournis à titre indicatif uniquement.</p>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,504 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Travel Advice API",
+    "version": "1.0.0",
+    "description": "Static API for travel advice content and OpenAPI-driven presentation components."
+  },
+  "servers": [
+    {
+      "url": "https://yourusername.github.io/your-repo"
+    }
+  ],
+  "paths": {
+    "/travel-advice.json": {
+      "get": {
+        "summary": "Get travel advice items",
+        "operationId": "getTravelAdvice",
+        "responses": {
+          "200": {
+            "description": "Travel advice response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TravelAdviceResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TravelAdviceResponse": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TravelAdviceItem"
+            }
+          }
+        },
+        "required": ["value"]
+      },
+      "TravelAdviceItem": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "iso_code": { "type": "string" },
+          "country": { "type": "string" },
+          "language": { "type": "string" },
+          "published_at": { "type": "string" },
+          "valid_on": { "type": "string" },
+          "advice_against": { "type": "string" },
+          "has_travel_advice": { "type": "boolean" },
+          "update_information": {
+            "$ref": "#/components/schemas/UpdateInformation"
+          },
+          "general_assessment": {
+            "$ref": "#/components/schemas/HtmlContent"
+          },
+          "chapters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TravelAdviceChapter"
+            }
+          },
+          "disclaimer_of_liability": {
+            "$ref": "#/components/schemas/HtmlContent"
+          }
+        },
+        "required": [
+          "id",
+          "iso_code",
+          "country",
+          "language",
+          "published_at",
+          "valid_on",
+          "advice_against",
+          "has_travel_advice",
+          "update_information",
+          "general_assessment",
+          "chapters",
+          "disclaimer_of_liability"
+        ]
+      },
+      "UpdateInformation": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/HtmlContent"
+          },
+          "html": {
+            "type": "string"
+          }
+        },
+        "required": ["meta", "html"]
+      },
+      "HtmlContent": {
+        "type": "object",
+        "properties": {
+          "html": {
+            "type": "string"
+          }
+        },
+        "required": ["html"]
+      },
+      "TravelAdviceChapter": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "htmlTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "anchorUrl": { "type": "string" },
+          "html": { "type": "string" }
+        },
+        "required": ["title", "htmlTitle", "anchorUrl", "html"]
+      },
+
+      "OpenAPIText": {
+        "description": "A text component with a path and value template to inject payload from an OpenAPI endpoint.",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "identifier": { "type": "string" },
+          "component": {
+            "type": "string",
+            "example": "openapi-text"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "openApiTextInclude": {
+                "type": "object",
+                "properties": {
+                  "service": { "type": "string" },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "path": { "type": "string" },
+                      "value": { "type": "string" }
+                    },
+                    "required": ["path", "value"]
+                  }
+                },
+                "required": ["service", "params"]
+              }
+            },
+            "required": ["openApiTextInclude"]
+          }
+        },
+        "required": ["id", "identifier", "component", "content"]
+      },
+
+      "OpenAPIList": {
+        "description": "A list component with a path, field, and label template.",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "identifier": { "type": "string" },
+          "component": {
+            "type": "string",
+            "example": "openapi-list"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "openApiListInclude": {
+                "type": "object",
+                "properties": {
+                  "service": { "type": "string" },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "path": { "type": "string" },
+                      "field": { "type": "string" },
+                      "label": { "type": "string" }
+                    },
+                    "required": ["path"]
+                  }
+                },
+                "required": ["service", "params"]
+              }
+            },
+            "required": ["openApiListInclude"]
+          }
+        },
+        "required": ["id", "identifier", "component", "content"]
+      },
+
+      "OpenAPIHtml": {
+        "description": "An HTML component with a path and value template.",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "identifier": { "type": "string" },
+          "component": {
+            "type": "string",
+            "example": "openapi-html"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "openApiHtmlInclude": {
+                "type": "object",
+                "properties": {
+                  "service": { "type": "string" },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "path": { "type": "string" },
+                      "value": { "type": "string" }
+                    },
+                    "required": ["path"]
+                  }
+                },
+                "required": ["service", "params"]
+              }
+            },
+            "required": ["openApiHtmlInclude"]
+          }
+        },
+        "required": ["id", "identifier", "component", "content"]
+      },
+
+      "OpenAPIHtmlList": {
+        "description": "An HTML list component with a path, field and titleField.",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "identifier": { "type": "string" },
+          "component": {
+            "type": "string",
+            "example": "openapi-html-list"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "openApiHtmlListInclude": {
+                "type": "object",
+                "properties": {
+                  "service": { "type": "string" },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "path": { "type": "string" },
+                      "field": { "type": "string" },
+                      "titleField": { "type": "string" }
+                    },
+                    "required": ["path"]
+                  }
+                },
+                "required": ["service", "params"]
+              }
+            },
+            "required": ["openApiHtmlListInclude"]
+          }
+        },
+        "required": ["id", "identifier", "component", "content"]
+      },
+
+      "OpenAPIIframe": {
+        "description": "An iframe component with a path to a URL from the payload.",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "identifier": { "type": "string" },
+          "component": {
+            "type": "string",
+            "example": "openapi-iframe"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "openApiIframeInclude": {
+                "type": "object",
+                "properties": {
+                  "service": { "type": "string" },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "path": { "type": "string" },
+                      "title": { "type": "string" },
+                      "height": { "type": "string" },
+                      "width": { "type": "string" },
+                      "ratio": { "type": "string" }
+                    },
+                    "required": ["path"]
+                  }
+                },
+                "required": ["service", "params"]
+              }
+            },
+            "required": ["openApiIframeInclude"]
+          }
+        },
+        "required": ["id", "identifier", "component", "content"]
+      },
+
+      "OpenAPICard": {
+        "description": "A card component with path, title, body, metadata and hyperlink fields.",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "identifier": { "type": "string" },
+          "component": {
+            "type": "string",
+            "example": "openapi-card"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "openApiCardInclude": {
+                "type": "object",
+                "properties": {
+                  "service": { "type": "string" },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "path": { "type": "string" },
+                      "title": { "type": "string" },
+                      "imagePosition": { "type": "string" },
+                      "imageHyperlink": { "type": "string" },
+                      "body": { "type": "string" },
+                      "metadata": { "type": "string" },
+                      "href": { "type": "string" },
+                      "isExternal": { "type": "string" }
+                    },
+                    "required": ["path"]
+                  }
+                },
+                "required": ["service", "params"]
+              }
+            },
+            "required": ["openApiCardInclude"]
+          }
+        },
+        "required": ["id", "identifier", "component", "content"]
+      },
+
+      "OpenAPILinkList": {
+        "description": "A link list component with path, label and href.",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "identifier": { "type": "string" },
+          "component": {
+            "type": "string",
+            "example": "openapi-link-list"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "openApiLinkListInclude": {
+                "type": "object",
+                "properties": {
+                  "service": { "type": "string" },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "path": { "type": "string" },
+                      "label": { "type": "string" },
+                      "href": { "type": "string" }
+                    },
+                    "required": ["path"]
+                  }
+                },
+                "required": ["service", "params"]
+              }
+            },
+            "required": ["openApiLinkListInclude"]
+          }
+        },
+        "required": ["id", "identifier", "component", "content"]
+      },
+
+      "OpenAPIAccordion": {
+        "description": "Accordion component for OpenAPI fields.",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "identifier": { "type": "string" },
+          "component": {
+            "type": "string",
+            "example": "openapi-accordion"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "openApiAccordionInclude": {
+                "type": "object",
+                "properties": {
+                  "service": { "type": "string" },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "Path to the object or array inside the API response"
+                      },
+                      "titlePath": {
+                        "type": "string",
+                        "description": "Relative path to the field containing the title"
+                      },
+                      "titleValue": {
+                        "type": "string",
+                        "description": "Accordion title template. Use {{value}} for dynamic content"
+                      }
+                    },
+                    "required": ["path"]
+                  }
+                },
+                "required": ["service", "params"]
+              }
+            },
+            "required": ["openApiAccordionInclude"]
+          },
+          "containers": {
+            "type": "object",
+            "properties": {
+              "openApiFields": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    { "$ref": "#/components/schemas/OpenAPIText" },
+                    { "$ref": "#/components/schemas/OpenAPIList" },
+                    { "$ref": "#/components/schemas/OpenAPIHtml" },
+                    { "$ref": "#/components/schemas/OpenAPIHtmlList" },
+                    { "$ref": "#/components/schemas/OpenAPIIframe" },
+                    { "$ref": "#/components/schemas/OpenAPIAccordion" },
+                    { "$ref": "#/components/schemas/OpenAPICard" },
+                    { "$ref": "#/components/schemas/OpenAPILinkList" }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "required": ["id", "identifier", "component", "content"]
+      },
+
+      "OpenAPIObjects": {
+        "description": "Container for OpenAPI components. Represents array data from an OpenAPI response.",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "identifier": { "type": "string" },
+          "component": {
+            "type": "string",
+            "example": "openapi-objects"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "openApiObjectsInclude": {
+                "type": "object",
+                "properties": {
+                  "service": { "type": "string" },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "Path to the array inside the API response"
+                      }
+                    },
+                    "required": ["path"]
+                  }
+                },
+                "required": ["service", "params"]
+              }
+            },
+            "required": ["openApiObjectsInclude"]
+          },
+          "containers": {
+            "type": "object",
+            "properties": {
+              "openApiFields": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    { "$ref": "#/components/schemas/OpenAPIText" },
+                    { "$ref": "#/components/schemas/OpenAPIList" },
+                    { "$ref": "#/components/schemas/OpenAPIHtml" },
+                    { "$ref": "#/components/schemas/OpenAPIHtmlList" },
+                    { "$ref": "#/components/schemas/OpenAPIIframe" },
+                    { "$ref": "#/components/schemas/OpenAPIAccordion" },
+                    { "$ref": "#/components/schemas/OpenAPICard" },
+                    { "$ref": "#/components/schemas/OpenAPILinkList" }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "required": ["id", "identifier", "component", "content"]
+      }
+    }
+  }
+}
